@@ -1,12 +1,16 @@
 /*Geoffrey Trenholm 991712128*/
 
-CREATE TABLE IF NOT EXISTS department (
+DROP TABLE IF EXISTS emp_dept;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS department;
+
+CREATE TABLE department (
     dept_id BIGINT(11) PRIMARY KEY,
     dept_name VARCHAR(45),
     email VARCHAR(45) UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS employee (
+CREATE TABLE employee (
     emp_id BIGINT(11) PRIMARY KEY,
     first_name VARCHAR(45),
     last_name VARCHAR(45),
@@ -15,7 +19,7 @@ CREATE TABLE IF NOT EXISTS employee (
     hire_date DATE
 );
 
-CREATE TABLE IF NOT EXISTS emp_dept (
+CREATE TABLE emp_dept (
     emp_id BIGINT(11),
     dept_id BIGINT(11),
     PRIMARY KEY (emp_id, dept_id),
