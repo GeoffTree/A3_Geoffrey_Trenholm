@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-@Entity(name="employee")
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -40,7 +40,7 @@ public class Employee {
     )
     private Set<Department> departments = new HashSet<>();
 
-    @PrePersist
+
     public void generateId(){
         if(emp_id == null){
             emp_id = (long)(Math.random()*9_000_000_000L) + 1_000_000_000L;

@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Employee Form</title>
+
 </head>
 <body>
+<div th:replace="fragments :: header"></div>
 
+<h2>Add or Update Employee</h2>
+<form id="employeeForm">
+  <input type="hidden" id="emp_id"/>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required/>
+  <button type="button" onclick="fetchEmployee()">Load</button><br/>
+
+  <label for="first_name">First Name:</label>
+  <input type="text" id="first_name" required/><br/>
+
+  <label for="last_name">Last Name:</label>
+  <input type="text" id="last_name" required/><br/>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" required>
+    <option value="">--Select--</option>
+    <option value="M">Male</option>
+    <option value="F">Female</option>
+  </select><br/>
+
+  <label for="hire_date">Hire Date:</label>
+  <input type="date" id="hire_date" required/><br/>
+
+  <button type="button" onclick="submitEmployee()">Add/Update Employee</button>
+</form>
+
+<h3>All Employees</h3>
+<table id="employeeTable">
+  <thead>
+  <tr><th>ID</th><th>Name</th><th>Gender</th><th>Email</th><th>Hire Date</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div th:replace="fragments :: footer"></div>
+<script src="/js/employee.js"></script>
 </body>
 </html>

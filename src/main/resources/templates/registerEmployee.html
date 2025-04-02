@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register Employee</title>
 </head>
 <body>
+<div th:replace="fragments :: header"></div>
 
+<h2>Assign Employee to Department</h2>
+<form id="registerForm">
+  <label for="email">Email:</label>
+  <input type="email" id="email" required/>
+  <button type="button" onclick="loadEmployee()">Load</button><br/>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" readonly/><br/>
+
+  <label for="departmentSelect">Departments:</label>
+  <select id="departmentSelect" multiple></select><br/>
+
+  <button type="button" onclick="assignEmployee()">Assign</button>
+</form>
+
+<h3>Employee-Department Assignments</h3>
+<table id="assignmentTable">
+  <thead>
+  <tr><th>Employee</th><th>Email</th><th>Departments</th></tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div th:replace="fragments :: footer"></div>
 </body>
 </html>

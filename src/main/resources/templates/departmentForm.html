@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DepartmentForm</title>
+
 </head>
 <body>
+<div th:replace="fragments :: header"></div>
 
+<h2>Add or Update Department</h2>
+<form id="departmentForm">
+    <input type="hidden" id="dept_id"/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required/>
+    <button type="button" onclick="fetchDepartment()">Load</button><br/>
+
+    <label for="dept_name">Department Name:</label>
+    <input type="text" id="dept_name" required/><br/>
+
+    <button type="button" onclick="submitDepartment()">Add/Update Department</button>
+</form>
+
+<h3>All Departments</h3>
+<table id="departmentTable">
+    <thead>
+    <tr><th>ID</th><th>Name</th><th>Email</th></tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div th:replace="fragments :: footer"></div>
+<script src="/js/department.js"></script>
 </body>
 </html>
