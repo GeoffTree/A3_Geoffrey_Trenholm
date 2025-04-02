@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+
+<div th:fragment="header">
+    <header>
+        <h1>Employee Management System</h1>
+      <nav>
+        <a href="@{/employeeForm}">Employees</a>
+        <a href="@{/departmentForm}>">Departments</a>
+        <a href="@{/registerEmployee}">Register Employee</a>
+      </nav>
+    </header>
+</div>
+
+<div th:fragment="footer">
+    <footer>
+      <p>Geoffrey Trenholm - 991712128</p>
+    </footer>
+</div>
+</body>
+</html>
